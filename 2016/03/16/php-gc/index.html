@@ -5,27 +5,27 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://www.chenc.cc">
+  <link rel="dns-prefetch" href="http://www.chenc.cc">
   <title>PHP哈希表碰撞攻击原理 | Chenc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="转载自伯乐在线 哈希表碰撞攻击的基本原理哈希表是一种查找效率极高的数据结构，很多语言都在内部实现了哈希表。PHP中的哈希表是一种极为重要的数据结构，不但用于表示Array数据类型，还在Zend虚拟机内部用于存储上下文环境信息（执行上下文的变量及函数均使用哈希表结构存储）。">
 <meta name="keywords" content="PHP,哈希碰撞">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP哈希表碰撞攻击原理">
-<meta property="og:url" content="https://www.chenc.cc/2016/03/16/php-gc/index.html">
+<meta property="og:url" content="http://www.chenc.cc/2016/03/16/php-gc/index.html">
 <meta property="og:site_name" content="Chenc">
 <meta property="og:description" content="转载自伯乐在线 哈希表碰撞攻击的基本原理哈希表是一种查找效率极高的数据结构，很多语言都在内部实现了哈希表。PHP中的哈希表是一种极为重要的数据结构，不但用于表示Array数据类型，还在Zend虚拟机内部用于存储上下文环境信息（执行上下文的变量及函数均使用哈希表结构存储）。">
-<meta property="og:image" content="https://www.chenc.cc/img/php-gc/image_thumb.png">
-<meta property="og:image" content="https://www.chenc.cc/img/php-gc/哈希算法.gif">
-<meta property="og:image" content="https://www.chenc.cc/img/php-gc/按位与.gif">
-<meta property="og:image" content="https://www.chenc.cc/img/php-gc/用尽.png">
-<meta property="og:image" content="https://www.chenc.cc/img/php-gc/1_thumb.png">
-<meta property="og:image" content="https://www.chenc.cc/img/php-gc/3_thumb.png">
+<meta property="og:image" content="http://www.chenc.cc/img/php-gc/image_thumb.png">
+<meta property="og:image" content="http://www.chenc.cc/img/php-gc/哈希算法.gif">
+<meta property="og:image" content="http://www.chenc.cc/img/php-gc/按位与.gif">
+<meta property="og:image" content="http://www.chenc.cc/img/php-gc/用尽.png">
+<meta property="og:image" content="http://www.chenc.cc/img/php-gc/1_thumb.png">
+<meta property="og:image" content="http://www.chenc.cc/img/php-gc/3_thumb.png">
 <meta property="og:updated_time" content="2017-07-08T15:09:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP哈希表碰撞攻击原理">
 <meta name="twitter:description" content="转载自伯乐在线 哈希表碰撞攻击的基本原理哈希表是一种查找效率极高的数据结构，很多语言都在内部实现了哈希表。PHP中的哈希表是一种极为重要的数据结构，不但用于表示Array数据类型，还在Zend虚拟机内部用于存储上下文环境信息（执行上下文的变量及函数均使用哈希表结构存储）。">
-<meta name="twitter:image" content="https://www.chenc.cc/img/php-gc/image_thumb.png">
+<meta name="twitter:image" content="http://www.chenc.cc/img/php-gc/image_thumb.png">
   
     <link rel="alternative" href="/atom.xml" title="Chenc" type="application/atom+xml">
   
@@ -297,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?w=250&h=250&url=https://www.chenc.cc/2016/03/16/php-gc/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?w=250&h=250&url=http://www.chenc.cc/2016/03/16/php-gc/" alt="微信分享二维码">
     </div>
 </div>
 
