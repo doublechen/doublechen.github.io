@@ -97,13 +97,13 @@
 <meta name="description" content="数据类型 整数类型 TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT分别使用8，16，24，32，64位存储空间，存储的值范围为-2^(N-1)~2^(N-1)-1根据要存储的数据大小选择合适的整数类型UNSIGNED可选属性，表示不允许负值，只存非负整数相应地存储正数上限也大了一倍">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql数据库设计优化之数据类型篇">
+<meta property="og:title" content="《高性能MySQL》学习笔记之数据类型篇">
 <meta property="og:url" content="http://www.chenc.cc/2017/08/14/mysql-table-design-datatype/index.html">
 <meta property="og:site_name" content="Chenc">
 <meta property="og:description" content="数据类型 整数类型 TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT分别使用8，16，24，32，64位存储空间，存储的值范围为-2^(N-1)~2^(N-1)-1根据要存储的数据大小选择合适的整数类型UNSIGNED可选属性，表示不允许负值，只存非负整数相应地存储正数上限也大了一倍">
-<meta property="og:updated_time" content="2017-08-14T07:07:32.000Z">
+<meta property="og:updated_time" content="2017-09-10T09:38:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql数据库设计优化之数据类型篇">
+<meta name="twitter:title" content="《高性能MySQL》学习笔记之数据类型篇">
 <meta name="twitter:description" content="数据类型 整数类型 TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT分别使用8，16，24，32，64位存储空间，存储的值范围为-2^(N-1)~2^(N-1)-1根据要存储的数据大小选择合适的整数类型UNSIGNED可选属性，表示不允许负值，只存非负整数相应地存储正数上限也大了一倍">
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>mysql数据库设计优化之数据类型篇 | Chenc</title>
+  <title>《高性能MySQL》学习笔记之数据类型篇 | Chenc</title>
   
 
 
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mysql数据库设计优化之数据类型篇</h1>
+          <h1 class="post-title" itemprop="name headline">《高性能MySQL》学习笔记之数据类型篇</h1>
         
 
         <div class="post-meta">
@@ -384,7 +384,7 @@
 <p>MySQL在内部会将每个值在表中的位置保存为整数，且排序是按照对应的数字进行排序并不是按字符串<br>不建议使用的类型</p>
 </li>
 <li><p>时间类型</p>
-<p>DATATIME和TIMESTAMP<br>DATATIM能保存大范围的值，从1001年到9999年精确到秒，与时区无关，使用8字节存储空间<br>TIMESTAMP保存了从1970-01-01 00:00:00（格林尼治时间）以来的秒数，只用4字节存储空间，只能表示1970～2038年，与时区有关，会自动调整，除特殊行为之外尽量使用，因为其效率更高<br>不要讲unix时间戳作为整数存储到数据库，不好处理</p>
+<p>DATATIME和TIMESTAMP<br>DATATIM能保存大范围的值，从1001年到9999年精确到秒，与时区无关，使用8字节存储空间<br>TIMESTAMP保存了从1970-01-01 00:00:00（格林尼治时间）以来的秒数，只用4字节存储空间，只能表示1970～2038年，与时区有关，会自动调整，除特殊行为之外尽量使用，因为其效率更高<br>不要将unix时间戳作为整数存储到数据库，不好处理</p>
 </li>
 </ul>
 <h3 id="优化数据类型"><a href="#优化数据类型" class="headerlink" title="优化数据类型"></a>优化数据类型</h3><ul>
@@ -437,6 +437,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/15/mysql-table-design-index/" rel="prev" title="《高性能MySQL》学习笔记之索引篇">
+                《高性能MySQL》学习笔记之索引篇 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -513,7 +517,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
