@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://www.chenc.cc/2017/08/15/mysql-table-design-index/index.html">
 <meta property="og:site_name" content="Chenc">
 <meta property="og:description" content="索引类型(在存储引擎层实现)B-TREE索引所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据排序中也可以用到">
-<meta property="og:updated_time" content="2017-09-10T11:16:28.000Z">
+<meta property="og:updated_time" content="2017-09-11T05:19:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《高性能MySQL》学习笔记之索引篇">
 <meta name="twitter:description" content="索引类型(在存储引擎层实现)B-TREE索引所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据排序中也可以用到">
@@ -412,7 +412,7 @@
 <p>先计算整表的选择性</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> city) / <span class="keyword">count</span>(*) <span class="keyword">from</span> demo</div></pre></td></tr></table></figure>
 <p>再计算接近上述结果的长度</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> <span class="keyword">left</span>(city),<span class="number">3</span>) / <span class="keyword">count</span>(*) <span class="keyword">from</span> demo</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> <span class="keyword">left</span>(city,<span class="number">3</span>)) / <span class="keyword">count</span>(*) <span class="keyword">from</span> demo</div></pre></td></tr></table></figure>
 <p>创建前缀索引</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> demo <span class="keyword">add</span> <span class="keyword">key</span> (city(<span class="number">3</span>))</div></pre></td></tr></table></figure>
 <h4 id="选择合适的索引及列顺序"><a href="#选择合适的索引及列顺序" class="headerlink" title="选择合适的索引及列顺序"></a>选择合适的索引及列顺序</h4><p>在一个多列的b-tree索引中，索引列的顺序意味着索引首先按照最左列进行排序，其次是第二列等等。所以，索引可以按照升序或降序进行扫描，以满足精确符合列顺序的order by，group by，distinct等子句的查询需求</p>
@@ -421,8 +421,8 @@
 <p>聚集索引的创建</p>
 <ul>
 <li>InnoDB 通过主键聚集数据</li>
-<li>未定义主键 选择一个唯一的飞控索引代替</li>
-<li>没有这样的索引 InnoDB 将隐士定义一个主键来代替</li>
+<li>未定义主键 选择一个唯一的非空索引代替</li>
+<li>没有这样的索引 InnoDB 将隐式定义一个主键来代替</li>
 </ul>
 <p>优点</p>
 <ul>
@@ -506,6 +506,21 @@
 
       
       
+      <div id="container"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+      var gitment = new Gitment({
+        //id: '页面 ID', // 可选。默认为 location.href
+        owner: 'doublechen',
+        repo: 'doublechen.github.io',
+        oauth: {
+          client_id: 'ed6abbc466a53ef4897a',
+          client_secret: '6dfe67bf520d16b1701ead3a26642a9aa1dc1f38',
+        },
+      })
+      gitment.render('container')
+</script>
     </footer>
   </div>
   
