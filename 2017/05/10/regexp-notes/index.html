@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MySQL," />
+  <meta name="keywords" content="正则表达式," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="索引类型(在存储引擎层实现)B-TREE索引所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据排序中也可以用到">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="元字符   代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束    字符转义\转义 重复   代码/语法 说明     * 重复零次或更多次   + 重复一次或更多次   ? 重复零次或一次   {n} 重复n次   {n,}">
+<meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《高性能MySQL》学习笔记之索引篇">
-<meta property="og:url" content="http://www.chenc.cc/2017/08/15/mysql-table-design-index/index.html">
+<meta property="og:title" content="正则表达式学习笔记">
+<meta property="og:url" content="http://www.chenc.cc/2017/05/10/regexp-notes/index.html">
 <meta property="og:site_name" content="Chenc">
-<meta property="og:description" content="索引类型(在存储引擎层实现)B-TREE索引所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据排序中也可以用到">
-<meta property="og:updated_time" content="2017-09-11T05:19:27.000Z">
+<meta property="og:description" content="元字符   代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束    字符转义\转义 重复   代码/语法 说明     * 重复零次或更多次   + 重复一次或更多次   ? 重复零次或一次   {n} 重复n次   {n,}">
+<meta property="og:updated_time" content="2017-09-12T12:18:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《高性能MySQL》学习笔记之索引篇">
-<meta name="twitter:description" content="索引类型(在存储引擎层实现)B-TREE索引所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据排序中也可以用到">
+<meta name="twitter:title" content="正则表达式学习笔记">
+<meta name="twitter:description" content="元字符   代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束    字符转义\转义 重复   代码/语法 说明     * 重复零次或更多次   + 重复一次或更多次   ? 重复零次或一次   {n} 重复n次   {n,}">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://www.chenc.cc/2017/08/15/mysql-table-design-index/"/>
+  <link rel="canonical" href="http://www.chenc.cc/2017/05/10/regexp-notes/"/>
 
 
 
 
 
-  <title>《高性能MySQL》学习笔记之索引篇 | Chenc</title>
+  <title>正则表达式学习笔记 | Chenc</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/08/15/mysql-table-design-index/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/05/10/regexp-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《高性能MySQL》学习笔记之索引篇</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式学习笔记</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T14:09:14+08:00">
-                2017-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T19:01:12+08:00">
+                2017-05-10
               </time>
             
 
@@ -365,97 +365,338 @@
       
 
       
-        <h3 id="索引类型-在存储引擎层实现"><a href="#索引类型-在存储引擎层实现" class="headerlink" title="索引类型(在存储引擎层实现)"></a>索引类型(在存储引擎层实现)</h3><h4 id="B-TREE索引"><a href="#B-TREE索引" class="headerlink" title="B-TREE索引"></a>B-TREE索引</h4><p>所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同<br>不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据<br>排序中也可以用到<br><a id="more"></a></p>
-<ul>
-<li><p>可使用B-TREE索引的查询类型</p>
-<ul>
-<li>全值匹配</li>
-<li>匹配最左前缀</li>
-<li>匹配列前缀</li>
-<li>匹配范围值</li>
-<li>精确匹配某一列并范围匹配另一列</li>
-<li>只访问索引的查询</li>
-</ul>
-</li>
-<li><p>限制</p>
-<ul>
-<li>如果不是按照最左列开始查找则无法使用索引</li>
-<li>不能跳过索引中的列</li>
-<li>如果查询中有某个列的范围查询，则其右边所有列都无法使用索引</li>
-</ul>
-</li>
-</ul>
-<h4 id="哈希索引"><a href="#哈希索引" class="headerlink" title="哈希索引"></a>哈希索引</h4><p>基于哈希表实现的索引，只有精确匹配所有列才能有效，查找极快</p>
-<ul>
-<li><p>限制</p>
-<ul>
-<li>哈希索引只包含哈希值和行指针，不存储字段值，需要回表读取行信息</li>
-<li>哈希索引不是按照索引值顺序存储的，不能用于排序</li>
-<li>不支持部分列查找</li>
-<li>只能等值查找</li>
-<li>可能有哈希冲突</li>
-<li>冲突多时维护成本高</li>
-</ul>
-</li>
-</ul>
-<h4 id="空间数据索引-R-TREE"><a href="#空间数据索引-R-TREE" class="headerlink" title="空间数据索引 R-TREE"></a>空间数据索引 R-TREE</h4><p>MYISAM中支持，可用作地理数据存储，无需前缀查询，必须使用MySQL的GIS相关函数来维护数据<br>MySQL对此支持不完善</p>
-<h4 id="全文索引和其他"><a href="#全文索引和其他" class="headerlink" title="全文索引和其他"></a>全文索引和其他</h4><p>没实际用处，可通过Lucene等实现</p>
-<h3 id="索引的优点"><a href="#索引的优点" class="headerlink" title="索引的优点"></a>索引的优点</h3><ul>
-<li>可以让服务器快速定位到表的指定位置</li>
-<li>大大减少了服务器需要扫描的数据量</li>
-<li>可以帮助服务器避免排序和临时表</li>
-<li>可以将随机I/O 编程顺序I/O</li>
-</ul>
-<h3 id="高性能索引策略"><a href="#高性能索引策略" class="headerlink" title="高性能索引策略"></a>高性能索引策略</h3><h4 id="独立的列"><a href="#独立的列" class="headerlink" title="独立的列"></a>独立的列</h4><p>索引列不能是表达式的一部分，也不能是参数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> aid <span class="keyword">from</span> a <span class="keyword">where</span> aid + <span class="number">1</span> = <span class="number">5</span> # 错误示例</div></pre></td></tr></table></figure>
-<h4 id="前缀索引和索引的选择性"><a href="#前缀索引和索引的选择性" class="headerlink" title="前缀索引和索引的选择性"></a>前缀索引和索引的选择性</h4><p>前缀索引使用开始部分的字符来节约空间<br>选多长前缀合适，可通过计算获得</p>
-<p>先计算整表的选择性</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> city) / <span class="keyword">count</span>(*) <span class="keyword">from</span> demo</div></pre></td></tr></table></figure>
-<p>再计算接近上述结果的长度</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> <span class="keyword">left</span>(city,<span class="number">3</span>)) / <span class="keyword">count</span>(*) <span class="keyword">from</span> demo</div></pre></td></tr></table></figure>
-<p>创建前缀索引</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> demo <span class="keyword">add</span> <span class="keyword">key</span> (city(<span class="number">3</span>))</div></pre></td></tr></table></figure>
-<h4 id="选择合适的索引及列顺序"><a href="#选择合适的索引及列顺序" class="headerlink" title="选择合适的索引及列顺序"></a>选择合适的索引及列顺序</h4><p>在一个多列的b-tree索引中，索引列的顺序意味着索引首先按照最左列进行排序，其次是第二列等等。所以，索引可以按照升序或降序进行扫描，以满足精确符合列顺序的order by，group by，distinct等子句的查询需求</p>
-<p>法则:将选择性高的列放到索引最前列</p>
-<h4 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h4><p>当表有聚集索引时，它的数据实际存放在叶子节点中<br>一个表只能有一个聚集索引<br>不是所有的存储引擎都支持聚集索引</p>
-<p>聚集索引的创建</p>
-<ul>
-<li>InnoDB 通过主键聚集数据</li>
-<li>未定义主键 选择一个唯一的非空索引代替</li>
-<li>没有这样的索引 InnoDB 将隐式定义一个主键来代替</li>
-</ul>
-<p>优点</p>
-<ul>
-<li>可以把相关数据保存在一起</li>
-<li>数据访问更快</li>
-<li>使用覆盖索引扫描的查询可以直接使用叶节点中的键值</li>
-</ul>
-<p>缺点</p>
-<ul>
-<li>数据在内存中时，访问顺序不主要，优势消失</li>
-<li>插入数据严重依赖插入顺序</li>
-<li>更新聚集索引列代价高 移动位置</li>
-<li>移动行时页分裂问题</li>
-<li>全表扫描变慢</li>
-<li>二级索引更大</li>
-<li>二级索引要两次查找而不是一次</li>
-</ul>
-<h4 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h4><p> 一个索引包含所有需要查询的字段值（字段，条件，排序等），查询只需要扫描索引而无需回表</p>
-<p> 好处</p>
-<ul>
-<li>减少数据访问量</li>
-<li>顺序存储 io 少</li>
-<li><p>对innodb表特别有用</p>
-<p>MYSQL只能用B-TREE索引来做覆盖索引<br>MySQL不能在索引中执行like操作</p>
-</li>
-</ul>
-<h4 id="使用索引扫描来做排序"><a href="#使用索引扫描来做排序" class="headerlink" title="使用索引扫描来做排序"></a>使用索引扫描来做排序</h4><p>MySQL获得有序结果的方式：排序操作或按照索引顺序扫描<br>如果explain中 type：index 说明按照索引扫描排序</p>
-<ul>
-<li>只有当索引列顺序和orderby子句顺序完全一致且所有列排序方向都一样的时候，MySQL才会用索引来排序</li>
-<li>如果查询关联多张表，只有当orderby引用字段全部为第一张表时，才能用索引排序</li>
-<li>最左前缀或前导列为常量</li>
-</ul>
-<h4 id="压缩索引"><a href="#压缩索引" class="headerlink" title="压缩索引"></a>压缩索引</h4><p>MyISAM使用前缀压缩来减少索引大小，从而让更多的索引放入内存中<br>压缩方法:<br>先保存索引块中的第一个值，然后将其他值和第一个值进行比较，得到相同的字节数和生育的不同后缀部分<br>如 perform performance =&gt; perform 7,ance<br>不适用于io密集型应用</p>
+        <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线或汉字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h3><p><code>\</code>转义</p>
+<h3 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h3><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复零次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复零次或一次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3><p>方括号里列出，像<code>[aeiou]</code>就匹配任何一个英文元音字母，<code>[.?!]</code>匹配标点符号(<code>.</code>或<code>?</code>或<code>!</code>)</p>
+<h3 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件"></a>分枝条件</h3><p><code>|</code> 分隔整个表达式，表示或的关系</p>
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>用小括号来指定子表达式(也叫做分组)，然后你就可以指定这个子表达式的重复次数了，你也可以对子表达式进行其它一些操作</p>
+<h3 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h3><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母，数字，下划线，汉字的字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配不是单词开头或结束的位置</td>
+</tr>
+<tr>
+<td>[^x]</td>
+<td>匹配除了x以外的任意字符</td>
+</tr>
+<tr>
+<td>[^aeiou]</td>
+<td>匹配除了aeiou这几个字母以外的任意字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="后向引用"><a href="#后向引用" class="headerlink" title="后向引用"></a>后向引用</h3><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>捕获</td>
+<td><code>(exp)</code></td>
+<td>匹配exp,并捕获文本到自动命名的组里</td>
+</tr>
+<tr>
+<td>捕获</td>
+<td><code>(?&lt;name&gt;exp)</code></td>
+<td>匹配exp,并捕获文本到名称为name的组里，也可以写成<code>(?&#39;name&#39;exp)</code></td>
+</tr>
+<tr>
+<td>捕获</td>
+<td><code>(?:exp)</code></td>
+<td>匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td><code>(?=exp)</code></td>
+<td>匹配exp前面的位置</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td><code>(?&lt;=exp)</code></td>
+<td>匹配exp后面的位置</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td><code>(?!exp)</code></td>
+<td>匹配后面跟的不是exp的位置</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td><code>(?&lt;!exp)</code></td>
+<td>匹配前面不是exp的位置</td>
+</tr>
+<tr>
+<td>注释</td>
+<td><code>(?#comment)</code></td>
+<td>这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
+</tr>
+</tbody>
+</table>
+<h3 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a>贪婪与懒惰</h3><p>正则表达式通常的行为是（在使整个表达式能得到匹配的前提下）匹配尽可能多的字符<br>有时，我们更需要懒惰匹配，也就是匹配尽可能少的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号<code>?</code></p>
+<table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*?</td>
+<td>重复任意次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>+?</td>
+<td>重复1次或更多次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>??</td>
+<td>重复0次或1次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,m}?</td>
+<td>重复n到m次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,}?</td>
+<td>重复n次以上，但尽可能少重复</td>
+</tr>
+</tbody>
+</table>
+<h3 id="处理选项"><a href="#处理选项" class="headerlink" title="处理选项"></a>处理选项</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IgnoreCase(忽略大小写)</td>
+<td>匹配时不区分大小写。</td>
+</tr>
+<tr>
+<td>Multiline(多行模式)</td>
+<td>更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.)</td>
+</tr>
+<tr>
+<td>Singleline(单行模式)</td>
+<td>更改.的含义，使它与每一个字符匹配（包括换行符\n）。</td>
+</tr>
+<tr>
+<td>IgnorePatternWhitespace(忽略空白)</td>
+<td>忽略表达式中的非转义空白并启用由#标记的注释。</td>
+</tr>
+<tr>
+<td>ExplicitCapture(显式捕获)</td>
+<td>仅捕获已被显式命名的组。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他语法"><a href="#其他语法" class="headerlink" title="其他语法"></a>其他语法</h3><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\a</code></td>
+<td>报警字符(打印它的效果是电脑嘀一声)</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>通常是单词分界位置，但如果在字符类里使用代表退格</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>制表符，Tab</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>回车</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>竖向制表符</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>换页符</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>换行符</td>
+</tr>
+<tr>
+<td><code>\e</code></td>
+<td>Escape</td>
+</tr>
+<tr>
+<td><code>\0nn</code></td>
+<td>ASCII代码中八进制代码为nn的字符</td>
+</tr>
+<tr>
+<td><code>\xnn</code></td>
+<td>ASCII代码中十六进制代码为nn的字符</td>
+</tr>
+<tr>
+<td><code>\unnnn</code></td>
+<td>Unicode代码中十六进制代码为nnnn的字符</td>
+</tr>
+<tr>
+<td><code>\cN</code></td>
+<td>ASCII控制字符。比如\cC代表Ctrl+C</td>
+</tr>
+<tr>
+<td><code>\A</code></td>
+<td>字符串开头(类似^，但不受处理多行选项的影响)</td>
+</tr>
+<tr>
+<td><code>\Z</code></td>
+<td>字符串结尾或行尾(不受处理多行选项的影响)</td>
+</tr>
+<tr>
+<td><code>\z</code></td>
+<td>字符串结尾(类似$，但不受处理多行选项的影响)</td>
+</tr>
+<tr>
+<td>`\G</td>
+<td>当前搜索的开头`</td>
+</tr>
+<tr>
+<td><code>\p{name}</code></td>
+<td>Unicode中命名为name的字符类，例如\p{IsGreek}</td>
+</tr>
+<tr>
+<td>`(?&gt;exp)</td>
+<td>贪婪子表达式`</td>
+</tr>
+<tr>
+<td><code>(?&lt;x&gt;-&lt;y&gt;exp)</code></td>
+<td>平衡组</td>
+</tr>
+<tr>
+<td><code>(?im-nsx:exp)</code></td>
+<td>在子表达式exp中改变处理选项</td>
+</tr>
+<tr>
+<td><code>(?im-nsx)</code></td>
+<td>为表达式后面的部分改变处理选项</td>
+</tr>
+<tr>
+<td><code>(?(exp)yes no)</code></td>
+<td>把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no</td>
+</tr>
+<tr>
+<td><code>(?(exp)yes)</code></td>
+<td>同上，只是使用空表达式作为no</td>
+</tr>
+<tr>
+<td><code>(?(name)yes no)</code></td>
+<td>如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no</td>
+</tr>
+<tr>
+<td><code>(?(name)yes)</code></td>
+<td>同上，只是使用空表达式作为no</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -473,7 +714,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/正则表达式/" rel="tag"># 正则表达式</a>
           
         </div>
       
@@ -486,8 +727,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/14/mysql-table-design-datatype/" rel="next" title="《高性能MySQL》学习笔记之数据类型篇">
-                <i class="fa fa-chevron-left"></i> 《高性能MySQL》学习笔记之数据类型篇
+              <a href="/2016/03/16/php-gc/" rel="next" title="PHP哈希表碰撞攻击原理">
+                <i class="fa fa-chevron-left"></i> PHP哈希表碰撞攻击原理
               </a>
             
           </div>
@@ -496,8 +737,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/07/cooking-chenc-20170910/" rel="prev" title="陈氏菜谱其一">
-                陈氏菜谱其一 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/07/golden-2017-06-07/" rel="prev" title="【多图】家有美女初长成">
+                【多图】家有美女初长成 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -513,7 +754,7 @@
         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
         <script>
           var gitment = new Gitment({
-            id: '2017/08/15/mysql-table-design-index/', //'页面 ID', // 可选。默认为 location.href
+            id: '2017/05/10/regexp-notes/', //'页面 ID', // 可选。默认为 location.href
             owner: 'doublechen',
             repo: 'doublechen.github.io',
             oauth: {
@@ -685,7 +926,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引类型-在存储引擎层实现"><span class="nav-number">1.</span> <span class="nav-text">索引类型(在存储引擎层实现)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B-TREE索引"><span class="nav-number">1.1.</span> <span class="nav-text">B-TREE索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哈希索引"><span class="nav-number">1.2.</span> <span class="nav-text">哈希索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空间数据索引-R-TREE"><span class="nav-number">1.3.</span> <span class="nav-text">空间数据索引 R-TREE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全文索引和其他"><span class="nav-number">1.4.</span> <span class="nav-text">全文索引和其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的优点"><span class="nav-number">2.</span> <span class="nav-text">索引的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高性能索引策略"><span class="nav-number">3.</span> <span class="nav-text">高性能索引策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#独立的列"><span class="nav-number">3.1.</span> <span class="nav-text">独立的列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前缀索引和索引的选择性"><span class="nav-number">3.2.</span> <span class="nav-text">前缀索引和索引的选择性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择合适的索引及列顺序"><span class="nav-number">3.3.</span> <span class="nav-text">选择合适的索引及列顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聚集索引"><span class="nav-number">3.4.</span> <span class="nav-text">聚集索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖索引"><span class="nav-number">3.5.</span> <span class="nav-text">覆盖索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用索引扫描来做排序"><span class="nav-number">3.6.</span> <span class="nav-text">使用索引扫描来做排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩索引"><span class="nav-number">3.7.</span> <span class="nav-text">压缩索引</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">1.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符转义"><span class="nav-number">2.</span> <span class="nav-text">字符转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复"><span class="nav-number">3.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符类"><span class="nav-number">4.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分枝条件"><span class="nav-number">5.</span> <span class="nav-text">分枝条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组"><span class="nav-number">6.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反义"><span class="nav-number">7.</span> <span class="nav-text">反义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后向引用"><span class="nav-number">8.</span> <span class="nav-text">后向引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪婪与懒惰"><span class="nav-number">9.</span> <span class="nav-text">贪婪与懒惰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理选项"><span class="nav-number">10.</span> <span class="nav-text">处理选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他语法"><span class="nav-number">11.</span> <span class="nav-text">其他语法</span></a></li></ol></div>
             
 
           </div>
