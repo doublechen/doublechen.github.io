@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="正则表达式," />
+  <meta name="keywords" content="博客,Hexo," />
 
 
 
@@ -94,17 +94,24 @@
 
 
 
-<meta name="description" content="元字符   代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束">
-<meta name="keywords" content="正则表达式">
+<meta name="description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-10">
+<meta name="keywords" content="博客,Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式学习笔记">
-<meta property="og:url" content="http://www.chenc.cc/2017/05/10/regexp-notes/index.html">
+<meta property="og:title" content="Hexo博客从GitHub迁移到七牛云">
+<meta property="og:url" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/index.html">
 <meta property="og:site_name" content="Chenc">
-<meta property="og:description" content="元字符   代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束">
-<meta property="og:updated_time" content="2017-09-12T12:23:49.000Z">
+<meta property="og:description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-10">
+<meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/新建存储空间.png">
+<meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/绑定域名.png">
+<meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/域名.png">
+<meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/缓存.png">
+<meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/cdn域名.png">
+<meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/密钥.png">
+<meta property="og:updated_time" content="2017-09-12T17:33:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式学习笔记">
-<meta name="twitter:description" content="元字符   代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束">
+<meta name="twitter:title" content="Hexo博客从GitHub迁移到七牛云">
+<meta name="twitter:description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-10">
+<meta name="twitter:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/新建存储空间.png">
 
 
 
@@ -133,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://www.chenc.cc/2017/05/10/regexp-notes/"/>
+  <link rel="canonical" href="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/"/>
 
 
 
 
 
-  <title>正则表达式学习笔记 | Chenc</title>
+  <title>Hexo博客从GitHub迁移到七牛云 | Chenc</title>
   
 
 
@@ -276,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/05/10/regexp-notes/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -293,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">正则表达式学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo博客从GitHub迁移到七牛云</h1>
         
 
         <div class="post-meta">
@@ -305,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T19:01:12+08:00">
-                2017-05-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T23:22:41+08:00">
+                2017-09-12
               </time>
             
 
@@ -365,339 +372,31 @@
       
 
       
-        <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
-<thead>
-<tr>
-<th>代码</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.</td>
-<td>匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线或汉字</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配任意的空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
+        <p>Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。<br>今天介绍一下如何在七牛云存储这个产品上部署hexo博客。<br>从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W次范围内是免费的。融合CDN HTTP 下载流量每月0-10G也是免费的。这样的收费标准下部署个人博客应该是基本不用缴纳额外费用的。</p>
 <a id="more"></a>
-<h3 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h3><p><code>\</code>转义</p>
-<h3 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h3><table>
-<thead>
-<tr>
-<th>代码/语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>重复零次或更多次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>重复一次或更多次</td>
-</tr>
-<tr>
-<td>?</td>
-<td>重复零次或一次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td>重复n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>重复n次或更多次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>重复n到m次</td>
-</tr>
-</tbody>
-</table>
-<h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3><p>方括号里列出，像<code>[aeiou]</code>就匹配任何一个英文元音字母，<code>[.?!]</code>匹配标点符号(<code>.</code>或<code>?</code>或<code>!</code>)</p>
-<h3 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件"></a>分枝条件</h3><p><code>|</code> 分隔整个表达式，表示或的关系</p>
-<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>用小括号来指定子表达式(也叫做分组)，然后你就可以指定这个子表达式的重复次数了，你也可以对子表达式进行其它一些操作</p>
-<h3 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h3><table>
-<thead>
-<tr>
-<th>代码/语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\W</td>
-<td>匹配任意不是字母，数字，下划线，汉字的字符</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配任意不是空白符的字符</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配任意非数字的字符</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配不是单词开头或结束的位置</td>
-</tr>
-<tr>
-<td>[^x]</td>
-<td>匹配除了x以外的任意字符</td>
-</tr>
-<tr>
-<td>[^aeiou]</td>
-<td>匹配除了aeiou这几个字母以外的任意字符</td>
-</tr>
-</tbody>
-</table>
-<h3 id="后向引用"><a href="#后向引用" class="headerlink" title="后向引用"></a>后向引用</h3><table>
-<thead>
-<tr>
-<th>分类</th>
-<th>代码/语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>捕获</td>
-<td><code>(exp)</code></td>
-<td>匹配exp,并捕获文本到自动命名的组里</td>
-</tr>
-<tr>
-<td>捕获</td>
-<td><code>(?&lt;name&gt;exp)</code></td>
-<td>匹配exp,并捕获文本到名称为name的组里，也可以写成<code>(?&#39;name&#39;exp)</code></td>
-</tr>
-<tr>
-<td>捕获</td>
-<td><code>(?:exp)</code></td>
-<td>匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
-</tr>
-<tr>
-<td>零宽断言</td>
-<td><code>(?=exp)</code></td>
-<td>匹配exp前面的位置</td>
-</tr>
-<tr>
-<td>零宽断言</td>
-<td><code>(?&lt;=exp)</code></td>
-<td>匹配exp后面的位置</td>
-</tr>
-<tr>
-<td>零宽断言</td>
-<td><code>(?!exp)</code></td>
-<td>匹配后面跟的不是exp的位置</td>
-</tr>
-<tr>
-<td>零宽断言</td>
-<td><code>(?&lt;!exp)</code></td>
-<td>匹配前面不是exp的位置</td>
-</tr>
-<tr>
-<td>注释</td>
-<td><code>(?#comment)</code></td>
-<td>这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
-</tr>
-</tbody>
-</table>
-<h3 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a>贪婪与懒惰</h3><p>正则表达式通常的行为是（在使整个表达式能得到匹配的前提下）匹配尽可能多的字符<br>有时，我们更需要懒惰匹配，也就是匹配尽可能少的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号<code>?</code></p>
-<table>
-<thead>
-<tr>
-<th>代码/语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*?</td>
-<td>重复任意次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>+?</td>
-<td>重复1次或更多次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>??</td>
-<td>重复0次或1次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,m}?</td>
-<td>重复n到m次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,}?</td>
-<td>重复n次以上，但尽可能少重复</td>
-</tr>
-</tbody>
-</table>
-<h3 id="处理选项"><a href="#处理选项" class="headerlink" title="处理选项"></a>处理选项</h3><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IgnoreCase(忽略大小写)</td>
-<td>匹配时不区分大小写。</td>
-</tr>
-<tr>
-<td>Multiline(多行模式)</td>
-<td>更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.)</td>
-</tr>
-<tr>
-<td>Singleline(单行模式)</td>
-<td>更改.的含义，使它与每一个字符匹配（包括换行符\n）。</td>
-</tr>
-<tr>
-<td>IgnorePatternWhitespace(忽略空白)</td>
-<td>忽略表达式中的非转义空白并启用由#标记的注释。</td>
-</tr>
-<tr>
-<td>ExplicitCapture(显式捕获)</td>
-<td>仅捕获已被显式命名的组。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="其他语法"><a href="#其他语法" class="headerlink" title="其他语法"></a>其他语法</h3><table>
-<thead>
-<tr>
-<th>代码/语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>\a</code></td>
-<td>报警字符(打印它的效果是电脑嘀一声)</td>
-</tr>
-<tr>
-<td><code>\b</code></td>
-<td>通常是单词分界位置，但如果在字符类里使用代表退格</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>制表符，Tab</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>回车</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>竖向制表符</td>
-</tr>
-<tr>
-<td><code>\f</code></td>
-<td>换页符</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>换行符</td>
-</tr>
-<tr>
-<td><code>\e</code></td>
-<td>Escape</td>
-</tr>
-<tr>
-<td><code>\0nn</code></td>
-<td>ASCII代码中八进制代码为nn的字符</td>
-</tr>
-<tr>
-<td><code>\xnn</code></td>
-<td>ASCII代码中十六进制代码为nn的字符</td>
-</tr>
-<tr>
-<td><code>\unnnn</code></td>
-<td>Unicode代码中十六进制代码为nnnn的字符</td>
-</tr>
-<tr>
-<td><code>\cN</code></td>
-<td>ASCII控制字符。比如\cC代表Ctrl+C</td>
-</tr>
-<tr>
-<td><code>\A</code></td>
-<td>字符串开头(类似^，但不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td><code>\Z</code></td>
-<td>字符串结尾或行尾(不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td><code>\z</code></td>
-<td>字符串结尾(类似$，但不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>`\G</td>
-<td>当前搜索的开头`</td>
-</tr>
-<tr>
-<td><code>\p{name}</code></td>
-<td>Unicode中命名为name的字符类，例如\p{IsGreek}</td>
-</tr>
-<tr>
-<td>`(?&gt;exp)</td>
-<td>贪婪子表达式`</td>
-</tr>
-<tr>
-<td><code>(?&lt;x&gt;-&lt;y&gt;exp)</code></td>
-<td>平衡组</td>
-</tr>
-<tr>
-<td><code>(?im-nsx:exp)</code></td>
-<td>在子表达式exp中改变处理选项</td>
-</tr>
-<tr>
-<td><code>(?im-nsx)</code></td>
-<td>为表达式后面的部分改变处理选项</td>
-</tr>
-<tr>
-<td><code>(?(exp)yes no)</code></td>
-<td>把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no</td>
-</tr>
-<tr>
-<td><code>(?(exp)yes)</code></td>
-<td>同上，只是使用空表达式作为no</td>
-</tr>
-<tr>
-<td><code>(?(name)yes no)</code></td>
-<td>如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no</td>
-</tr>
-<tr>
-<td><code>(?(name)yes)</code></td>
-<td>同上，只是使用空表达式作为no</td>
-</tr>
-</tbody>
-</table>
+<h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>首先需要一个七牛云账号。可以点击<a href="https://portal.qiniu.com/signup?code=3lb1qt7bzzxaq" target="_blank" rel="external">这个链接</a>进行注册。注册成功后需要进行邮箱和实名制认证。按照引导操作即可。</p>
+<h3 id="创建存储空间"><a href="#创建存储空间" class="headerlink" title="创建存储空间"></a>创建存储空间</h3><p>进入控制台，新建存储空间，填写好存储空间名称、选择就近的存储区域、访问控制设置为公开即可。<br><img src="/2017/09/12/hexo-to-7cloud/新建存储空间.png" alt="创建存储空间" title="创建存储空间"></p>
+<p>创建好存储空间后，系统会分配给你一个测试域名，你可以用来测试访问自己的文件，但是需要注意的是此类测试域名，限总流量，限单 IP 访问频率，限速，仅供测试使用，不能用于自定义域名的 CNAME。你还需要绑定一个自己的域名</p>
+<img src="/2017/09/12/hexo-to-7cloud/绑定域名.png" alt="绑定域名" title="绑定域名">
+<p>填写好域名(需要ICP备案过的域名)</p>
+<img src="/2017/09/12/hexo-to-7cloud/域名.png" alt="域名" title="域名">
+<p>设置好缓存策略(html文件尽量不缓存)，创建即可。</p>
+<img src="/2017/09/12/hexo-to-7cloud/缓存.png" alt="缓存" title="缓存">
+<p>创建好了之后，又会分配给你一个域名，这个域名并不能直接访问，你需要把你的域名CNAME到这个域名。</p>
+<img src="/2017/09/12/hexo-to-7cloud/cdn域名.png" alt="域名" title="域名">
+<p>对象存储设置到这里就基本完成了。</p>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><p>bucket设置好之后就需要把自己的静态文件上传到bucket中。<br>这里推荐一个官方的上传工具 <a href="https://developer.qiniu.com/kodo/tools/1302/qshell" target="_blank" rel="external">qshell</a>，可以使你直接通过命令行上传文件。</p>
+<p>下载好之后将其加入系统PATH，这样你可以全局使用<code>qshell</code>命令。</p>
+<h4 id="设置密钥"><a href="#设置密钥" class="headerlink" title="设置密钥"></a>设置密钥</h4><p>使用命令<br>单用户模式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ qshell account ak sk</div></pre></td></tr></table></figure></p>
+<p>多用户模式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ qshell -m account ak sk</div></pre></td></tr></table></figure></p>
+<p>设置密钥，密钥在个人面板中。</p>
+<img src="/2017/09/12/hexo-to-7cloud/密钥.png" alt="密钥" title="密钥">
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   "src_dir"            :   "/workspace/hexobolg/public/", // 要同步的目录，一般是hexo的public目录</div><div class="line">   "bucket"             :   "hexo-chenc-cc", // bucket</div><div class="line">   "file_list"          :   "",</div><div class="line">   "key_prefix"         :   "",</div><div class="line">   "up_host"            :   "",</div><div class="line">   "ignore_dir"         :   false,</div><div class="line">   "overwrite"          :   true, // 时候覆盖更新，一定要配置成true，不然你的index永远不会更新了</div><div class="line">   "check_exists"       :   true,</div><div class="line">   "check_hash"         :   true,</div><div class="line">   "check_size"         :   false,</div><div class="line">   "rescan_local"       :   true,</div><div class="line">   "skip_file_prefixes" :   "test,demo,",</div><div class="line">   "skip_path_prefixes" :   "hello/,temp/",</div><div class="line">   "skip_fixed_strings" :   ".svn,.git",</div><div class="line">   "skip_suffixes"      :   ".DS_Store,.exe",</div><div class="line">   "log_file"           :   "upload.log",</div><div class="line">   "log_level"          :   "info",</div><div class="line">   "log_rotate"         :   1,</div><div class="line">   "log_stdout"         :   false,</div><div class="line">   "file_type"          :   0</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>将以上配置存储为json文件，作为命令的参数。</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>写好博客后可使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure></p>
+<p>生成静态文件，文件会生成在public目录下。<br>然后通过qshell命令代替原有的<code>hexo deploy</code>命令将整个public目录上传到bucket即可完成发布。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ qshell qupload 7cloud.json</div></pre></td></tr></table></figure>
+<p>注:qshell还有许多其他的命令，这里不做阐述，使用时请查看qshell文档。 </p>
 
       
     </div>
@@ -715,7 +414,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/正则表达式/" rel="tag"># 正则表达式</a>
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
         </div>
       
@@ -728,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/15/tiup-salon-wechat-dev/" rel="next" title="TiUP技术分享 -- 微信公众号开发">
-                <i class="fa fa-chevron-left"></i> TiUP技术分享 -- 微信公众号开发
+              <a href="/2017/09/07/cooking-chenc-20170910/" rel="next" title="陈氏菜谱其一">
+                <i class="fa fa-chevron-left"></i> 陈氏菜谱其一
               </a>
             
           </div>
@@ -737,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/12/tiup-salon-git/" rel="prev" title="TiUP技术分享--Git的基本命令和工作流简介">
-                TiUP技术分享--Git的基本命令和工作流简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -755,7 +452,7 @@
         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
         <script>
           var gitment = new Gitment({
-            id: '2017/05/10/regexp-notes/', //'页面 ID', // 可选。默认为 location.href
+            id: '2017/09/12/hexo-to-7cloud/', //'页面 ID', // 可选。默认为 location.href
             owner: 'doublechen',
             repo: 'doublechen.github.io',
             oauth: {
@@ -927,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">1.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符转义"><span class="nav-number">2.</span> <span class="nav-text">字符转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复"><span class="nav-number">3.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符类"><span class="nav-number">4.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分枝条件"><span class="nav-number">5.</span> <span class="nav-text">分枝条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组"><span class="nav-number">6.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反义"><span class="nav-number">7.</span> <span class="nav-text">反义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后向引用"><span class="nav-number">8.</span> <span class="nav-text">后向引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪婪与懒惰"><span class="nav-number">9.</span> <span class="nav-text">贪婪与懒惰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理选项"><span class="nav-number">10.</span> <span class="nav-text">处理选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他语法"><span class="nav-number">11.</span> <span class="nav-text">其他语法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册账号"><span class="nav-number">1.</span> <span class="nav-text">注册账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建存储空间"><span class="nav-number">2.</span> <span class="nav-text">创建存储空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传文件"><span class="nav-number">3.</span> <span class="nav-text">上传文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置密钥"><span class="nav-number">3.1.</span> <span class="nav-text">设置密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">3.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">3.3.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></div>
             
 
           </div>
