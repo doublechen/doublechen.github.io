@@ -94,23 +94,23 @@
 
 
 
-<meta name="description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-10">
+<meta name="description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W">
 <meta name="keywords" content="博客,Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客从GitHub迁移到七牛云">
+<meta property="og:title" content="Hexo博客宿主的新选择">
 <meta property="og:url" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/index.html">
 <meta property="og:site_name" content="Chenc">
-<meta property="og:description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-10">
+<meta property="og:description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W">
 <meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/新建存储空间.png">
 <meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/绑定域名.png">
 <meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/域名.png">
 <meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/缓存.png">
 <meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/cdn域名.png">
 <meta property="og:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/密钥.png">
-<meta property="og:updated_time" content="2017-09-12T17:33:39.000Z">
+<meta property="og:updated_time" content="2017-10-24T10:00:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo博客从GitHub迁移到七牛云">
-<meta name="twitter:description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-10">
+<meta name="twitter:title" content="Hexo博客宿主的新选择">
+<meta name="twitter:description" content="Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储产品。今天介绍一下如何在七牛云存储这个产品上部署hexo博客。从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W">
 <meta name="twitter:image" content="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/新建存储空间.png">
 
 
@@ -146,7 +146,7 @@
 
 
 
-  <title>Hexo博客从GitHub迁移到七牛云 | Chenc</title>
+  <title>Hexo博客宿主的新选择 | Chenc</title>
   
 
 
@@ -240,16 +240,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            宝贝回家
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -300,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo博客从GitHub迁移到七牛云</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo博客宿主的新选择</h1>
         
 
         <div class="post-meta">
@@ -335,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
                   </a>
                 </span>
 
@@ -372,7 +362,7 @@
       
 
       
-        <p>Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。<br>今天介绍一下如何在七牛云存储这个产品上部署hexo博客。<br>从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W次范围内是免费的。融合CDN HTTP 下载流量每月0-10G也是免费的。这样的收费标准下部署个人博客应该是基本不用缴纳额外费用的。</p>
+        <p>Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储产品。<br>今天介绍一下如何在七牛云存储这个产品上部署hexo博客。<br>从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W次范围内是免费的。融合CDN HTTP 下载流量每月0-10G也是免费的。这样的收费标准下部署个人博客应该是基本不用缴纳额外费用的。</p>
 <a id="more"></a>
 <h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>首先需要一个七牛云账号。可以点击<a href="https://portal.qiniu.com/signup?code=3lb1qt7bzzxaq" target="_blank" rel="external">这个链接</a>进行注册。注册成功后需要进行邮箱和实名制认证。按照引导操作即可。</p>
 <h3 id="创建存储空间"><a href="#创建存储空间" class="headerlink" title="创建存储空间"></a>创建存储空间</h3><p>进入控制台，新建存储空间，填写好存储空间名称、选择就近的存储区域、访问控制设置为公开即可。<br><img src="/2017/09/12/hexo-to-7cloud/新建存储空间.png" alt="创建存储空间" title="创建存储空间"></p>
@@ -439,29 +429,16 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/10/13/why-I-leave/" rel="prev" title="为什么又要离职">
+                为什么又要离职 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
 
       
       
-
-      
-        <div id="container"></div>
-        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-        <script>
-          var gitment = new Gitment({
-            id: '2017/09/12/hexo-to-7cloud/', //'页面 ID', // 可选。默认为 location.href
-            owner: 'doublechen',
-            repo: 'doublechen.github.io',
-            oauth: {
-              client_id: 'ed6abbc466a53ef4897a',
-              client_secret: '6dfe67bf520d16b1701ead3a26642a9aa1dc1f38',
-            },
-          })
-          gitment.render('container')
-        </script>
       
     </footer>
   </div>
@@ -532,7 +509,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -543,7 +520,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -554,7 +531,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -604,6 +581,12 @@
         </div>
 
         
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
         
 
         

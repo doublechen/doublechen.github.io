@@ -98,6 +98,7 @@
 <meta property="og:title" content="Chenc">
 <meta property="og:url" content="http://www.chenc.cc/index.html">
 <meta property="og:site_name" content="Chenc">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chenc">
 
@@ -230,16 +231,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            宝贝回家
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -273,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/09/12/hexo-to-7cloud/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/11/01/MySQL/mysql-partation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -292,7 +283,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/12/hexo-to-7cloud/" itemprop="url">Hexo博客从GitHub迁移到七牛云</a></h1>
+                <a class="post-title-link" href="/2017/11/01/MySQL/mysql-partation/" itemprop="url">MySQL分区表</a></h1>
         
 
         <div class="post-meta">
@@ -304,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T23:22:41+08:00">
-                2017-09-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T19:09:49+08:00">
+                2017-11-01
               </time>
             
 
@@ -327,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -365,10 +356,10 @@
 
       
         
-          <p>Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储存储产品。<br>今天介绍一下如何在七牛云存储这个产品上部署hexo博客。<br>从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W次范围内是免费的。融合CDN HTTP 下载流量每月0-10G也是免费的。这样的收费标准下部署个人博客应该是基本不用缴纳额外费用的。</p>
+          <h3 id="分区表"><a href="#分区表" class="headerlink" title="分区表"></a>分区表</h3><p>对用户来说分区表是一个独立的逻辑表，但是底层由多个物理子表组成。实现分区的代码实际上是对一组底层表的句柄对象的封装。对分区表的请求，都会通过句柄对象转化成对存储引擎的接口的调用。所以分区表对于SQL层来说是一个完全封装底层实现的黑盒子，对应用是透明的，但是从底层的文件系统看来就很容易发现，每一个分区表都有一个使用 <code>#</code> 分隔命名的表文件。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/12/hexo-to-7cloud/#more" rel="contents">
+            <a class="btn" href="/2017/11/01/MySQL/mysql-partation/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -397,7 +388,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -421,7 +411,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/09/07/cooking-chenc-20170910/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/09/12/blog/hexo-to-7cloud/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -440,7 +430,154 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/07/cooking-chenc-20170910/" itemprop="url">陈氏菜谱其一</a></h1>
+                <a class="post-title-link" href="/2017/09/12/blog/hexo-to-7cloud/" itemprop="url">Hexo博客宿主的新选择</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T23:22:41+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Hexo是一款简单高效的基于nodejs的博客框架，很多程序员喜欢将它托管到GitHub Page使用。但是一直以来，GitHub在国内的访问速度都饱受诟病，所以最近笔者盯上了国内的对象存储产品。<br>今天介绍一下如何在七牛云存储这个产品上部署hexo博客。<br>从七牛云的官网报价来看，它的对象存储的标准存储产品在各地区服务器的存储空间费用在数据量为0-10G时是免费的，上传流量免费，GET请求在0-100W次范围内是免费的。融合CDN HTTP 下载流量每月0-10G也是免费的。这样的收费标准下部署个人博客应该是基本不用缴纳额外费用的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/12/blog/hexo-to-7cloud/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/09/07/cooking/cooking-chenc-20170910/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/07/cooking/cooking-chenc-20170910/" itemprop="url">最近学做的好吃的</a></h1>
         
 
         <div class="post-meta">
@@ -476,7 +613,7 @@
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/cooking/" itemprop="url" rel="index">
-                    <span itemprop="name">陈氏私厨</span>
+                    <span itemprop="name">好吃的</span>
                   </a>
                 </span>
 
@@ -513,10 +650,10 @@
 
       
         
-          <p>离职在家休息这段时间学了学做饭，其实做饭也没什么特别难的，想吃什么了就去查，然后照着菜谱做就好了。<br>室友和同学都觉得还ok，能吃，于是就想着发出来记录一下。这里列了四菜一汤，招待亲友吃一顿还是足够的。<br>以后可能还会有陈氏菜谱其二，看时间和心情。嗯。<br>
+          <p>离职在家休息这段时间学了学做饭，照猫画虎还不算难吃。。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/07/cooking-chenc-20170910/#more" rel="contents">
+            <a class="btn" href="/2017/09/07/cooking/cooking-chenc-20170910/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -545,7 +682,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -569,7 +705,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/08/15/mysql-table-design-index/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/08/15/MySQL/mysql-table-design-index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -588,7 +724,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/15/mysql-table-design-index/" itemprop="url">《高性能MySQL》学习笔记之索引篇</a></h1>
+                <a class="post-title-link" href="/2017/08/15/MySQL/mysql-table-design-index/" itemprop="url">《高性能MySQL》学习笔记之索引篇</a></h1>
         
 
         <div class="post-meta">
@@ -623,8 +759,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -664,7 +800,7 @@
           <h3 id="索引类型-在存储引擎层实现"><a href="#索引类型-在存储引擎层实现" class="headerlink" title="索引类型(在存储引擎层实现)"></a>索引类型(在存储引擎层实现)</h3><h4 id="B-TREE索引"><a href="#B-TREE索引" class="headerlink" title="B-TREE索引"></a>B-TREE索引</h4><p>所有的值都是按照顺序存储的，并且每个叶子节点到根节点的距离相同<br>不再需要全表扫描，从索引根节点开始搜索到叶子节点，叶子节点指向被索引的数据<br>排序中也可以用到<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/15/mysql-table-design-index/#more" rel="contents">
+            <a class="btn" href="/2017/08/15/MySQL/mysql-table-design-index/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -693,7 +829,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -717,7 +852,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/08/14/mysql-table-design-datatype/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/08/14/MySQL/mysql-table-design-datatype/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -736,7 +871,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/14/mysql-table-design-datatype/" itemprop="url">《高性能MySQL》学习笔记之数据类型篇</a></h1>
+                <a class="post-title-link" href="/2017/08/14/MySQL/mysql-table-design-datatype/" itemprop="url">《高性能MySQL》学习笔记之数据类型篇</a></h1>
         
 
         <div class="post-meta">
@@ -771,8 +906,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -814,7 +949,7 @@
 <p>TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT分别使用8，16，24，32，64位存储空间，存储的值范围为-2^(N-1)~2^(N-1)-1根据要存储的数据大小选择合适的整数类型<br>UNSIGNED可选属性，表示不允许负值，只存非负整数相应地存储正数上限也大了一倍 </p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/14/mysql-table-design-datatype/#more" rel="contents">
+            <a class="btn" href="/2017/08/14/MySQL/mysql-table-design-datatype/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -843,7 +978,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -867,7 +1001,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/07/17/mysql-insert-or-update/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/07/17/MySQL/mysql-insert-or-update/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -886,7 +1020,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/17/mysql-insert-or-update/" itemprop="url">MySQL 插入时如果存在则更新</a></h1>
+                <a class="post-title-link" href="/2017/07/17/MySQL/mysql-insert-or-update/" itemprop="url">MySQL 插入时如果存在则更新</a></h1>
         
 
         <div class="post-meta">
@@ -921,8 +1055,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -959,11 +1093,11 @@
 
       
         
-          <h4 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> testable (a,b,c) <span class="keyword">VALUES</span> (<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>),(<span class="number">7</span>,<span class="number">6</span>,<span class="number">7</span>) </div><div class="line"><span class="keyword">ON</span> <span class="keyword">DUPLICATE</span> <span class="keyword">KEY</span> </div><div class="line">	<span class="keyword">UPDATE</span> a=<span class="keyword">VALUES</span>(a),b=<span class="keyword">VALUES</span>(b),c=<span class="keyword">VALUES</span>(c)</div></pre></td></tr></table></figure>
+          <h4 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> testable (a,b,c) <span class="keyword">VALUES</span> (<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>),(<span class="number">7</span>,<span class="number">6</span>,<span class="number">7</span>) </span><br><span class="line"><span class="keyword">ON</span> <span class="keyword">DUPLICATE</span> <span class="keyword">KEY</span> </span><br><span class="line">	<span class="keyword">UPDATE</span> a=<span class="keyword">VALUES</span>(a),b=<span class="keyword">VALUES</span>(b),c=<span class="keyword">VALUES</span>(c)</span><br></pre></td></tr></table></figure>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/17/mysql-insert-or-update/#more" rel="contents">
+            <a class="btn" href="/2017/07/17/MySQL/mysql-insert-or-update/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -992,7 +1126,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -1016,7 +1149,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/06/10/php-memcached-cas/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/06/10/PHP/php-memcached-cas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -1035,7 +1168,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/10/php-memcached-cas/" itemprop="url">Memcached::cas 乐观锁</a></h1>
+                <a class="post-title-link" href="/2017/06/10/PHP/php-memcached-cas/" itemprop="url">Memcached::cas 乐观锁</a></h1>
         
 
         <div class="post-meta">
@@ -1070,8 +1203,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -1108,11 +1241,11 @@
 
       
         
-          <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> bool Memcached::cas ( float $cas_token , string $key , mixed $value [, int $expiration ] )</div></pre></td></tr></table></figure>
+          <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> bool Memcached::cas ( float $cas_token , string $key , mixed $value [, int $expiration ] )</span><br></pre></td></tr></table></figure>
 <p><code>Memcached::cas()</code>执行一个“检查并设置”的操作，因此，它仅在当前客户端最后一次取值后，该key 对应的值没有被其他客户端修改的情况下， 才能够将值写入。检查是通过<code>cas_token</code>参数进行的，<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/10/php-memcached-cas/#more" rel="contents">
+            <a class="btn" href="/2017/06/10/PHP/php-memcached-cas/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1141,7 +1274,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -1165,7 +1297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/06/07/food-around-bupt/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/06/07/cooking/food-around-bupt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -1184,7 +1316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/07/food-around-bupt/" itemprop="url">北邮附近的好吃的！</a></h1>
+                <a class="post-title-link" href="/2017/06/07/cooking/food-around-bupt/" itemprop="url">北邮附近的好吃的！</a></h1>
         
 
         <div class="post-meta">
@@ -1220,7 +1352,7 @@
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/cooking/" itemprop="url" rel="index">
-                    <span itemprop="name">陈氏私厨</span>
+                    <span itemprop="name">好吃的</span>
                   </a>
                 </span>
 
@@ -1260,7 +1392,7 @@
           <p>有大神梳理了北邮附近的各种好吃的，从食堂到外卖，从小店到餐厅。。。这里偷懒直接截个图收藏了~</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/07/food-around-bupt/#more" rel="contents">
+            <a class="btn" href="/2017/06/07/cooking/food-around-bupt/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1289,7 +1421,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -1313,7 +1444,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/06/07/golden-2017-06-07/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/06/07/golden/golden-2017-06-07/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -1332,7 +1463,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/07/golden-2017-06-07/" itemprop="url">【多图】家有美女初长成</a></h1>
+                <a class="post-title-link" href="/2017/06/07/golden/golden-2017-06-07/" itemprop="url">【多图】家有美女初长成</a></h1>
         
 
         <div class="post-meta">
@@ -1408,7 +1539,7 @@
           <p>【多图】家有美女初长成</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/07/golden-2017-06-07/#more" rel="contents">
+            <a class="btn" href="/2017/06/07/golden/golden-2017-06-07/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1437,7 +1568,6 @@
       
         <div class="post-eof"></div>
       
-
       
     </footer>
   </div>
@@ -1461,7 +1591,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/05/12/tiup-salon-git/">
+    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/05/12/salon/tiup-salon-git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenc">
@@ -1480,7 +1610,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/12/tiup-salon-git/" itemprop="url">TiUP技术分享--Git的基本命令和工作流简介</a></h1>
+                <a class="post-title-link" href="/2017/05/12/salon/tiup-salon-git/" itemprop="url">TiUP技术分享--Git的基本命令和工作流简介</a></h1>
         
 
         <div class="post-meta">
@@ -1515,8 +1645,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
+                  <a href="/categories/salon/" itemprop="url" rel="index">
+                    <span itemprop="name">技术沙龙</span>
                   </a>
                 </span>
 
@@ -1556,7 +1686,7 @@
           <p>今天在团队技术沙龙主讲了Git的基本命令和工作流简介的相关内容，现将讲稿发到这里，供大家参考</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/12/tiup-salon-git/#more" rel="contents">
+            <a class="btn" href="/2017/05/12/salon/tiup-salon-git/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1585,192 +1715,6 @@
       
         <div class="post-eof"></div>
       
-
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/05/10/regexp-notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/10/regexp-notes/" itemprop="url">正则表达式学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T19:01:12+08:00">
-                2017-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">术业有专攻</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
-<thead>
-<tr>
-<th>代码</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.</td>
-<td>匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线或汉字</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配任意的空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/10/regexp-notes/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
       
     </footer>
   </div>
@@ -1831,7 +1775,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1842,7 +1786,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1904,6 +1848,12 @@
 
         
         
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
 
         
         
@@ -1930,7 +1880,7 @@
         <div class="copyright" >
   
   &copy;  2016 &mdash; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-"></i>
   </span>
