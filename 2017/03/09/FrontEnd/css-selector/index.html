@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -94,13 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chenc">
-<meta property="og:url" content="http://www.chenc.cc/page/2/index.html">
+<meta name="description" content="ID选择器 #123#first-para &amp;#123;    font-weight : bold;&amp;#125; 类选择器 .123.warning &amp;#123;    font-weight : bold;&amp;#125; 多类选择器 .123456789.warning &amp;#123;   font-weight : bold; &amp;#125;.urgent &amp;#123;    color : re">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS选择器">
+<meta property="og:url" content="http://www.chenc.cc/2017/03/09/FrontEnd/css-selector/index.html">
 <meta property="og:site_name" content="Chenc">
+<meta property="og:description" content="ID选择器 #123#first-para &amp;#123;    font-weight : bold;&amp;#125; 类选择器 .123.warning &amp;#123;    font-weight : bold;&amp;#125; 多类选择器 .123456789.warning &amp;#123;   font-weight : bold; &amp;#125;.urgent &amp;#123;    color : re">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-25T04:43:39.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenc">
+<meta name="twitter:title" content="CSS选择器">
+<meta name="twitter:description" content="ID选择器 #123#first-para &amp;#123;    font-weight : bold;&amp;#125; 类选择器 .123.warning &amp;#123;    font-weight : bold;&amp;#125; 多类选择器 .123456789.warning &amp;#123;   font-weight : bold; &amp;#125;.urgent &amp;#123;    color : re">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://www.chenc.cc/page/2/"/>
+  <link rel="canonical" href="http://www.chenc.cc/2017/03/09/FrontEnd/css-selector/"/>
 
 
 
 
 
-  <title>Chenc</title>
+  <title>CSS选择器 | Chenc</title>
   
 
 
@@ -154,9 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,195 +252,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2017/05/10/PHP/regexp-notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/6157655?v=3&s=460">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/10/PHP/regexp-notes/" itemprop="url">正则表达式学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T19:01:12+08:00">
-                2017-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><table>
-<thead>
-<tr>
-<th>代码</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.</td>
-<td>匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线或汉字</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配任意的空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/10/PHP/regexp-notes/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-      
-        
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -467,9 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/09/FrontEnd/css-selector/" itemprop="url">CSS选择器</a></h1>
+          <h1 class="post-title" itemprop="name headline">CSS选择器</h1>
         
 
         <div class="post-meta">
@@ -541,9 +356,7 @@
       
 
       
-        
-          
-            <h4 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器 #"></a>ID选择器 <code>#</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#first-para</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight </span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器 #"></a>ID选择器 <code>#</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#first-para</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight </span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器 ."></a>类选择器 <code>.</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight </span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="多类选择器"><a href="#多类选择器" class="headerlink" title="多类选择器 ."></a>多类选择器 <code>.</code></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span> &#123;</span><br><span class="line">   <span class="attribute">font-weight </span>: bold; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.urgent</span> &#123;</span><br><span class="line">    <span class="attribute">color </span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.warning</span><span class="selector-class">.urgent</span> &#123;</span><br><span class="line">    <span class="attribute">background </span>: silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>通过把两个类选择器链接在一起，尽可以选择<code>同时包含</code>这些类名的元素(类名顺序不限)。</p>
@@ -630,8 +443,6 @@
   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在h2之前添加两个银色的大括号 */</span></span><br><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content </span>: <span class="string">"&#125;&#125;"</span>;</span><br><span class="line">    <span class="attribute">color </span>: silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -646,315 +457,58 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-      
-        
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2016/04/15/salon/tiup-salon-wechat-dev/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/6157655?v=3&s=460">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/15/salon/tiup-salon-wechat-dev/" itemprop="url">TiUP技术分享 -- 微信公众号开发</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-15T21:24:47+08:00">
-                2016-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/salon/" itemprop="url" rel="index">
-                    <span itemprop="name">技术沙龙</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>今天在团队技术沙龙主讲了微信公众号的相关内容，现将讲稿发到这里</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/04/15/salon/tiup-salon-wechat-dev/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/15/salon/tiup-salon-wechat-dev/" rel="next" title="TiUP技术分享 -- 微信公众号开发">
+                <i class="fa fa-chevron-left"></i> TiUP技术分享 -- 微信公众号开发
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-      
-        
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenc.cc/2016/03/16/PHP/php-gc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/6157655?v=3&s=460">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/03/16/PHP/php-gc/" itemprop="url">PHP哈希表碰撞攻击原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-16T08:12:43+08:00">
-                2016-03-16
-              </time>
+              <a href="/2017/05/10/PHP/regexp-notes/" rel="prev" title="正则表达式学习笔记">
+                正则表达式学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      
 
       
       
-
       
         
-          <p>转载自<a href="http://blog.jobbole.com/11516/" target="_blank" rel="noopener">伯乐在线</a></p>
-<h3 id="哈希表碰撞攻击的基本原理"><a href="#哈希表碰撞攻击的基本原理" class="headerlink" title="哈希表碰撞攻击的基本原理"></a>哈希表碰撞攻击的基本原理</h3><p>哈希表是一种查找效率极高的数据结构，很多语言都在内部实现了哈希表。PHP中的哈希表是一种极为重要的数据结构，不但用于表示Array数据类型，还在Zend虚拟机内部用于存储上下文环境信息（执行上下文的变量及函数均使用哈希表结构存储）。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/03/16/PHP/php-gc/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-      
+          <div id="container"></div>
+          <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+          <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+          <script>
+            var gitment = new Gitment({
+              id: '2017/03/09/FrontEnd/css-selector/', //'页面 ID', // 可选。默认为 location.href
+              owner: 'doublechen',
+              repo: 'doublechen.github.io',
+              oauth: {
+                client_id: 'ed6abbc466a53ef4897a',
+                client_secret: '6dfe67bf520d16b1701ead3a26642a9aa1dc1f38',
+              },
+            })
+            gitment.render('container')
+          </script>
         
       
     </footer>
@@ -965,14 +519,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -980,6 +531,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1000,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars0.githubusercontent.com/u/6157655?v=3&s=460"
@@ -1093,6 +657,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ID选择器"><span class="nav-number">1.</span> <span class="nav-text">ID选择器 #</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类选择器"><span class="nav-number">2.</span> <span class="nav-text">类选择器 .</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多类选择器"><span class="nav-number">3.</span> <span class="nav-text">多类选择器 .</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性选择器"><span class="nav-number">4.</span> <span class="nav-text">属性选择器 [ ]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后代选择器-空格"><span class="nav-number">5.</span> <span class="nav-text">后代选择器 (空格)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择子元素-gt"><span class="nav-number">6.</span> <span class="nav-text">选择子元素 &gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择相邻兄弟元素"><span class="nav-number">7.</span> <span class="nav-text">选择相邻兄弟元素 +</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类选择器"><span class="nav-number">8.</span> <span class="nav-text">伪类选择器 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪元素选择器"><span class="nav-number">9.</span> <span class="nav-text">伪元素选择器</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1225,10 +805,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
